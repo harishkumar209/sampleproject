@@ -1,0 +1,112 @@
+package project1;
+
+/**
+ *
+ * @author user
+ */
+public class Item 
+{
+    String Productname;
+    int productid;
+    String Description;
+    String Sku;
+    String Contentlist;
+    String manfacturingdate;
+    String Expirydate;
+    int Durability;
+
+    public String getProductname() {
+        return Productname;
+    }
+
+    public void setProductname(String Productname) {
+        this.Productname = Productname;
+    }
+
+    public int getProductid() {
+        return productid;
+    }
+
+    public void setProductid(int productid) {
+        this.productid = productid;
+    }
+
+    public String getDescription() {
+        return Description;
+    }
+
+    public void setDescription(String Description) {
+        this.Description = Description;
+    }
+
+    public String getSku() {
+        return Sku;
+    }
+
+    public void setSku(String Sku) {
+        this.Sku = Sku;
+    }
+
+    public String getContentlist() {
+        return Contentlist;
+    }
+
+    public void setContentlist(String Contentlist) {
+        this.Contentlist = Contentlist;
+    }
+
+    public String getManfacturingdate() {
+        return manfacturingdate;
+    }
+
+    public void setManfacturingdate(String manfacturingdate) {
+        this.manfacturingdate = manfacturingdate;
+    }
+
+    public String getExpirydate() {
+        return Expirydate;
+    }
+
+    public void setExpirydate(String Expirydate) {
+        this.Expirydate = Expirydate;
+    }
+
+    public int getDurability() {
+        return Durability;
+    }
+
+    public void setDurability(int Durability) {
+        this.Durability = Durability;
+    }
+    
+    
+    
+    
+}
+package project1;
+
+import java.io.File;
+import java.io.IOException;
+import org.codehaus.jackson.map.ObjectMapper;
+
+/**
+ *
+ * @author user
+ */
+public class Item1
+{
+  public static void main(String args[]) throws IOException
+  {
+      Item obj=new Item();
+      obj.setProductname("Dove");
+     obj.setProductid(100);
+     obj.setDescription("To keep ur skin smoothly by use Dovesoap");
+      obj.setSku("Dove Soaps");
+     obj.setContentlist("");
+     obj.setManfacturingdate("july 2016");
+     obj.setExpirydate("dec 2018");
+     obj.setDurability(25);
+     ObjectMapper st=new ObjectMapper();
+     st.writeValue(new File("e:/drive.json"),obj);
+  } 
+}
